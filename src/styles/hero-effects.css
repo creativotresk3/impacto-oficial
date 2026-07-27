@@ -1,0 +1,218 @@
+/* =====================================================
+   HERO EFFECTS - IMPACTO OFICIAL
+=====================================================*/
+
+/* ===========================
+   RAYOS DE LUZ
+=========================== */
+
+.effect-light-rays{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    pointer-events:none;
+
+    user-select:none;
+
+    opacity:.45;
+
+    z-index:2;
+
+    mix-blend-mode:screen;
+
+    animation:lightBreath 8s ease-in-out infinite;
+
+}
+
+
+
+/* ===========================
+   DESTELLO CENTRAL
+=========================== */
+
+.effect-lens-flare{
+
+    position:absolute;
+
+    left:50%;
+
+    top:34%;
+
+    transform:translate(-50%,-50%);
+
+    width:700px;
+
+    pointer-events:none;
+
+    user-select:none;
+
+    opacity:.35;
+
+    z-index:4;
+
+    mix-blend-mode:screen;
+
+    animation:flarePulse 5s ease-in-out infinite;
+
+}
+
+
+
+/* ===========================
+   PARTÍCULAS
+=========================== */
+
+.particles{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    user-select:none;
+
+    z-index:3;
+
+    opacity:.12;
+
+    background-image:
+        radial-gradient(circle,
+        rgba(255,255,255,.9) 1px,
+        transparent 1px);
+
+    background-size:55px 55px;
+
+    animation:particlesMove 25s linear infinite;
+
+}
+
+
+
+/* ===========================
+   ANIMACIONES
+=========================== */
+
+@keyframes lightBreath{
+
+    0%{
+
+        opacity:.25;
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        opacity:.60;
+
+        transform:scale(1.03);
+
+    }
+
+    100%{
+
+        opacity:.25;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+@keyframes flarePulse{
+
+    0%{
+
+        opacity:.18;
+
+        transform:
+        translate(-50%,-50%)
+        scale(.94);
+
+    }
+
+    50%{
+
+        opacity:.60;
+
+        transform:
+        translate(-50%,-50%)
+        scale(1.04);
+
+    }
+
+    100%{
+
+        opacity:.18;
+
+        transform:
+        translate(-50%,-50%)
+        scale(.94);
+
+    }
+
+}
+
+
+
+@keyframes particlesMove{
+
+    from{
+
+        background-position:0 0;
+
+    }
+
+    to{
+
+        background-position:0 700px;
+
+    }
+
+}
+
+
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+.effect-light-rays{
+
+    opacity:.35;
+
+}
+
+
+
+.effect-lens-flare{
+
+    width:360px;
+
+    top:31%;
+
+}
+
+
+
+.particles{
+
+    background-size:42px 42px;
+
+}
+
+}
